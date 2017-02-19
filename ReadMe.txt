@@ -10,3 +10,21 @@ To Start Each Server: -
 To Start Additional EurekaClient: -
 
     mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8764'
+
+
+REST operations
+===============
+
+https://github.com/Netflix/eureka/wiki/Eureka-REST-operations
+
+To De-register an instance: -
+
+curl -X DELETE http://localhost:8761/eureka/apps/SJD-EUREKA-CLIENT/192.168.1.106:sjd-eureka-client:8764
+
+To Take an Instance out of service: -
+
+curl -X PUT http://localhost:8761/eureka/apps/SJD-EUREKA-CLIENT/192.168.1.106:sjd-eureka-client:8764/status?value=OUT_OF_SERVICE
+
+To Put an Instance Back into service: -
+
+curl -X PUT http://localhost:8761/eureka/apps/SJD-EUREKA-CLIENT/192.168.1.106:sjd-eureka-client:8764/status?value=UP
