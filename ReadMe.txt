@@ -28,3 +28,9 @@ curl -X PUT http://localhost:8761/eureka/apps/SJD-EUREKA-CLIENT/192.168.1.106:sj
 To Put an Instance Back into service: -
 
 curl -X PUT http://localhost:8761/eureka/apps/SJD-EUREKA-CLIENT/192.168.1.106:sjd-eureka-client:8764/status?value=UP
+
+
+.Net / Eureka Interop
+=====================
+
+https://github.com/SteeltoeOSS
