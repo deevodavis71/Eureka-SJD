@@ -36,7 +36,7 @@ class ServiceInstanceRestController {
         this.discoveryClient = discoveryClient;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/info")
     public String index() {
         return
                 "<ul>" +
