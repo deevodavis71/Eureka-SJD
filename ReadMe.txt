@@ -7,6 +7,11 @@ To Start Each Server: -
     
     mvn spring-boot:run
 
+To Start Additional EurekaServer: -
+
+    mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8760'
+
+
 To Start Additional EurekaClient: -
 
     mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8764'
