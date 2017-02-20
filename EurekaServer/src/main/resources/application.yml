@@ -1,4 +1,37 @@
 spring:
+  profiles.active: peer1
+
+---
+
+spring:
+  profiles: peer1
+  application:
+    name: eureka-server
+
+server:
+  port: 8760
+
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    #registerWithEureka: false
+    #fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://peer2:8761/eureka
+
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+  
+logging:
+  level:
+    com.netflix: 'WARN'
+    org.springframework.cloud: 'WARN'
+
+---
+
+spring:
+  profiles: peer2
   application:
     name: eureka-server
 
@@ -6,9 +39,14 @@ server:
   port: 8761
 
 eureka:
+  instance:
+    hostname: peer2
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    #registerWithEureka: false
+    #fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://peer1:8760/eureka
+
   server:
     waitTimeInMsWhenSyncEmpty: 0
   
