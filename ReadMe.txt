@@ -5,11 +5,16 @@ Zuul Proxy      = http://localhost:9999/sjd-eureka-client/whoami
 
 To Start Each Server: -
     
-    mvn spring-boot:run
+        mvn spring-boot:run
 
-To Start Additional EurekaServer: -
+    OR for Eureka Server in a clustered mode
 
-    mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8760'
+        mvn spring-boot:run -Drun.jvmArguments='-Dspring.profiles.active=peer1'
+        mvn spring-boot:run -Drun.jvmArguments='-Dspring.profiles.active=peer2'
+
+    To Start Additional EurekaServer: -
+
+        mvn spring-boot:run -Drun.jvmArguments='-Dserver.port=8760'
 
 
 To Start Additional EurekaClient: -
